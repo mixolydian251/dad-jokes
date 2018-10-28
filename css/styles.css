@@ -26,6 +26,7 @@ header {
   align-items: center;
   margin: 0 auto;
   font-family: "Comic Neue Bold", "Comic Sans MS", Avenir, Helvetica, sans-serif;
+  perspective: -1500px;
 }
 
 menu {
@@ -44,7 +45,9 @@ menu {
 }
 
 menu:hover {
-  transform: scale(1.1);
+  transform: rotateX(20deg);
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 menu:hover #menu__line--top {
@@ -82,6 +85,10 @@ menu:hover #menu__line--bottom {
   margin-left: 15px;
 }
 
+#title:hover {
+  transform: rotateX(10deg);
+}
+
 #title__dad {
   color: white;
 }
@@ -99,13 +106,14 @@ menu:hover #menu__line--bottom {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  perspective: 1500px;
 }
 
 .card {
   height: 500px;
   width: 400px;
   border-radius: 5px;
-  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
   font-size: 40px;
   text-align: center;
   display: flex;
@@ -113,7 +121,13 @@ menu:hover #menu__line--bottom {
   align-items: center;
   padding: 20px;
   line-height: 1.1;
-  transition: all 150ms ease;
+  transition: all 250ms ease;
+}
+
+.card:hover{
+  transform: rotateX(7deg);
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+  cursor: pointer;
 }
 
 .card__color {
