@@ -16,6 +16,7 @@ $( document ).ready(function() {
 
     function response(joke) {       
         $("#q").on("click", function() {
+            console.log("hit")
             show_question(joke)
         })
     }
@@ -30,7 +31,10 @@ $( document ).ready(function() {
 
     function show_answer(joke) {
         $("#punchline").text(joke.answer)
-        random(joke)
+        $("#a").off("click", function() {
+            random(joke)
+        })
+ 
     }    
 })
 
