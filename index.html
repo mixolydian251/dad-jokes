@@ -6,15 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Dad Jokes</title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css" />
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
 </head>
 
 <body>
-  <h1>Dad Jokes</h1>
-  <p id="joke"></p>
-  <h3 id="answer"></h3>
-  <button class="answer-button">show answer</button>
+  <header>
+    <h1 id="title">
+      <span id="title__dad">Dad</span>
+      <span id="title__jokes">Jokes</span>
+    </h1>
+    <menu>
+      <span id="menu__line--top" class="menu__line"></span>
+      <span id="menu__line--middle" class="menu__line"></span>
+      <span id="menu__line--bottom" class="menu__line"></span>
+    </menu>
+  </header>
 
+  <section class="joke-container">
+    <div class="card-container">
+      <div class="card card__color">
+        <p id="question">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At atque et expedita minima mollitia pariatur quae quis quod soluta voluptas!</p>
+      </div>
+      <div class="card card__white">
+        <p id="punchline">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, hic.</p>
+      </div>
+    </div>
+  </section>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="scripts/index.js"></script>
 </body>
