@@ -18,15 +18,14 @@ $( document ).ready(function() {
         $("#q").on("click", function() {
             show_question(joke)
         })
-
-        $("#a").on("click", function() {
-            show_answer(joke)  
-        }) 
     }
 
     function show_question(joke) {
         $("#question").text(joke.question)
         $("#punchline").text("")
+        $("#a").on("click", function() {
+            show_answer(joke)  
+        }) 
     }
 
     function show_answer(joke) {
