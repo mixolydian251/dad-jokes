@@ -85,10 +85,6 @@ menu:hover #menu__line--bottom {
   margin-left: 15px;
 }
 
-#title:hover {
-  transform: rotateX(10deg);
-}
-
 #title__dad {
   color: white;
 }
@@ -124,7 +120,7 @@ menu:hover #menu__line--bottom {
   transition: all 250ms ease;
 }
 
-.card:hover{
+.card:hover {
   transform: rotateX(7deg);
   box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
   cursor: pointer;
