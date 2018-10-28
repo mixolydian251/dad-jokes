@@ -40,13 +40,13 @@ menu {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
-  transition: transform 200ms ease;
+  box-shadow: 0 15px 35px rgba(50, 50, 50, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 200ms ease;
 }
 
 menu:hover {
-  transform: rotateX(20deg);
-  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(50, 50, 50, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
   cursor: pointer;
 }
 
@@ -96,6 +96,10 @@ menu:hover #menu__line--bottom {
   align-items: center;
 }
 
+.joke-container:hover {
+  cursor: pointer;
+}
+
 .card-container {
   width: 100%;
   max-width: 1000px;
@@ -103,13 +107,14 @@ menu:hover #menu__line--bottom {
   justify-content: space-evenly;
   align-items: center;
   perspective: 1500px;
+  transition: all 200ms;
 }
 
 .card {
   height: 500px;
   width: 400px;
   border-radius: 5px;
-  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 35px rgba(50, 50, 50, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
   font-size: 40px;
   text-align: center;
   display: flex;
@@ -117,21 +122,28 @@ menu:hover #menu__line--bottom {
   align-items: center;
   padding: 20px;
   line-height: 1.1;
-  transition: all 250ms ease;
+  transition: transform 200ms ease;
 }
 
-.card:hover {
-  transform: rotateX(7deg);
-  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
-  cursor: pointer;
-}
-
-.card__color {
+.card__question {
   background-color: #fac562;
+  position: absolute;
+  z-index: 10;
 }
 
-.card__white {
+.card__question--show {
+  transform: translate(-55%, 0px);
+}
+
+.card__punchline {
   background-color: white;
+  position: absolute;
+  z-index: 1;
+  transform: translate(15px, 15px);
+}
+
+.card__punchline--show {
+  transform: translate(55%, 0px);
 }
 
 @media only screen and (max-width: 850px) {
