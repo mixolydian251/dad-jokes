@@ -1,11 +1,11 @@
 @font-face {
-  font-family: 'Comic Neue Regular';
-  src: url('../fonts/ComicNeue_Regular.otf') format('opentype');
+  font-family: "Comic Neue Regular";
+  src: url("../fonts/ComicNeue_Regular.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'Comic Neue Bold';
-  src: url('../fonts/ComicNeue_Bold.otf') format('opentype');
+  font-family: "Comic Neue Bold";
+  src: url("../fonts/ComicNeue_Bold.otf") format("opentype");
 }
 
 * {
@@ -14,7 +14,8 @@
 
 body {
   background: linear-gradient(to top left, #fba157, #fbc562);
-  font-family: "Comic Neue Regular", "Comic Sans MS", Avenir, Helvetica, sans-serif;
+  font-family: "Comic Neue Regular", "Comic Sans MS", Avenir, Helvetica,
+    sans-serif;
 }
 
 header {
@@ -23,6 +24,7 @@ header {
   width: 100vw;
   display: flex;
   align-items: center;
+  margin: 0 auto;
   font-family: "Comic Neue Bold", "Comic Sans MS", Avenir, Helvetica, sans-serif;
 }
 
@@ -37,7 +39,7 @@ menu {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
   transition: transform 200ms ease;
 }
 
@@ -46,20 +48,25 @@ menu:hover {
 }
 
 menu:hover #menu__line--top {
-  animation: wiggle 200ms ease
+  animation: wiggle 200ms ease;
 }
 
 menu:hover #menu__line--middle {
-  animation: wiggle 200ms ease 100ms
+  animation: wiggle 200ms ease 100ms;
 }
 
 menu:hover #menu__line--bottom {
-  animation: wiggle 200ms ease 200ms
+  animation: wiggle 200ms ease 200ms;
 }
 
 @keyframes wiggle {
-  0%, 100% { transform: scaleX(1);}
-  50% { transform: scaleX(1.5);}
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.5);
+  }
 }
 
 .menu__line {
@@ -72,7 +79,7 @@ menu:hover #menu__line--bottom {
 
 #title {
   font-size: 48px;
-  margin-left: 15px ;
+  margin-left: 15px;
 }
 
 #title__dad {
@@ -98,7 +105,7 @@ menu:hover #menu__line--bottom {
   height: 500px;
   width: 400px;
   border-radius: 5px;
-  box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
   font-size: 40px;
   text-align: center;
   display: flex;
@@ -106,6 +113,7 @@ menu:hover #menu__line--bottom {
   align-items: center;
   padding: 20px;
   line-height: 1.1;
+  transition: all 150ms ease;
 }
 
 .card__color {
@@ -114,4 +122,25 @@ menu:hover #menu__line--bottom {
 
 .card__white {
   background-color: white;
+}
+
+@media only screen and (max-width: 850px) {
+  .card {
+    height: 400px;
+    width: 300px;
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .card-container {
+    flex-direction: column;
+  }
+
+  .card {
+    height: 250px;
+    width: 90%;
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
 }
