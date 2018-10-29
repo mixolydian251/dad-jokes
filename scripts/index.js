@@ -34,7 +34,6 @@ $( document ).ready(function() {
         $("#a").off("click", function() {
             random(joke)
         })
- 
     }    
 })
 
