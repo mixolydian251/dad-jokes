@@ -1,40 +1,28 @@
-$( document ).ready(function() {
+// Helper functions
+function generateRandomJoke(jokes) {
+  var jokeId = Math.floor(Math.random() * jokes.length);
+  $("#question").text(jokes[jokeId].Q);
+  $("#punchline").text(jokes[jokeId].A);
+}
 
-    $.get("scripts/jokes.json", function(data){
-        var joke = {
-            data: data
-        }
-        random(joke)
-    });
-        
-    function random(joke) {
-        var random = Math.floor(Math.random() * joke.data.length)
-        joke.question = joke.data[random].Q;
-        joke.answer = joke.data[random].A;
-        response(joke);
-    }
+function handleClick(jokes) {
+  var question = $("div.card__question");
+  var punchline = $("div.card__punchline");
+  $("section.joke-container").click(function() {
+    if (punchlineShown) generateRandomJoke(jokes);
+    question.toggleClass("card__question--show");
+    punchline.toggleClass("card__punchline--show");
+    punchlineShown = !punchlineShown;
+  });
+}
 
-    function response(joke) {       
-        $("#q").on("click", function() {
-            console.log("hit")
-            show_question(joke)
-        })
-    }
+// State
+var punchlineShown = false;
 
-    function show_question(joke) {
-        $("#question").text(joke.question)
-        $("#punchline").text("")
-        $("#a").on("click", function() {
-            show_answer(joke)  
-        }) 
-    }
-
-    function show_answer(joke) {
-        $("#punchline").text(joke.answer)
-        $("#a").off("click", function() {
-            random(joke)
-        })
-    }    
-})
-
- 
+// On mount
+$(document).ready(function() {
+  $.get("scripts/jokes.json", function(jokes) {
+    generateRandomJoke(jokes);
+    handleClick(jokes);
+  });
+});
