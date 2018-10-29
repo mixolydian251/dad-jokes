@@ -13,7 +13,14 @@ function handleClick(jokes) {
     question.toggleClass("card__question--show");
     punchline.toggleClass("card__punchline--show");
     punchlineShown = !punchlineShown;
-  });
+    if (punchlineShown) {
+        var track = Math.ceil(Math.random() * 4);
+        console.log(track)
+        track = "../assets/audio/laugh_"+track+".wav";
+        setTimeout(function(){ 
+            new Audio(track).play() }, 2000);
+        }
+    });
 }
 
 // State
