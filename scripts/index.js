@@ -3,6 +3,7 @@ function generateRandomJoke(jokes) {
   var jokeId = Math.floor(Math.random() * jokes.length);
   $("#question").text(jokes[jokeId].Q);
   $("#punchline").text(jokes[jokeId].A);
+  $("#joke-id").text(`#${jokeId}`);
 }
 
 function handleClick(jokes) {
@@ -21,7 +22,7 @@ var punchlineShown = false;
 
 // On mount
 $(document).ready(function() {
-  $.get("scripts/jokes.json", function(jokes) {
+  $.get("data/formatted_jokes.json", function(jokes) {
     generateRandomJoke(jokes);
     handleClick(jokes);
   });
