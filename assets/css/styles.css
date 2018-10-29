@@ -1,3 +1,5 @@
+@import "menu.css";
+
 @font-face {
   font-family: "Comic Neue Regular";
   src: url("../fonts/ComicNeue_Regular.otf") format("opentype");
@@ -10,6 +12,11 @@
 
 * {
   box-sizing: border-box;
+}
+
+button:focus {
+  outline: none;
+  border: solid 2px #5e9ed6;
 }
 
 html {
@@ -47,57 +54,6 @@ header {
   margin: 0 auto;
   font-family: "Comic Neue Bold", "Comic Sans MS", Avenir, Helvetica, sans-serif;
   perspective: -1500px;
-}
-
-menu {
-  height: 50px;
-  width: 50px;
-  margin-left: auto;
-  margin-right: 15px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 15px 35px rgba(50, 50, 50, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: all 200ms ease;
-}
-
-menu:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 35px rgba(50, 50, 50, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
-  cursor: pointer;
-}
-
-menu:hover #menu__line--top {
-  animation: wiggle 200ms ease;
-}
-
-menu:hover #menu__line--middle {
-  animation: wiggle 200ms ease 100ms;
-}
-
-menu:hover #menu__line--bottom {
-  animation: wiggle 200ms ease 200ms;
-}
-
-@keyframes wiggle {
-  0%,
-  100% {
-    transform: scaleX(1);
-  }
-  50% {
-    transform: scaleX(1.5);
-  }
-}
-
-.menu__line {
-  height: 3px;
-  width: 25px;
-  border-radius: 10px;
-  background: #222;
-  margin: 3px 0;
 }
 
 .title {

@@ -17,11 +17,6 @@
       <span id="title__jokes">Jokes</span>
       <span id="title__tagline">Over 1,000 terrible jokes!</span>
     </h1>
-    <menu>
-      <span id="menu__line--top" class="menu__line"></span>
-      <span id="menu__line--middle" class="menu__line"></span>
-      <span id="menu__line--bottom" class="menu__line"></span>
-    </menu>
   </header>
 
   <section class="joke-container">
@@ -40,6 +35,33 @@
           <p id="continue">click anywhere!</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <button class="menu__button">
+    <span id="menu__line--top" class="menu__line"></span>
+    <span id="menu__line--middle" class="menu__line"></span>
+    <span id="menu__line--bottom" class="menu__line"></span>
+  </button>
+
+  <section class="menu hidden">
+    <div class=menu__audio>
+      <p class="menu__text">Audio</p>
+      <input type="checkbox" />
+    </div>
+    <div class="menu__theme">
+      <p class="menu__text">Theme</p>
+      <select class="menu__dropdown">
+        <option class="menu__dropdown--yellow" value="yellow">
+          Yellow
+        </option>
+        <option class="menu__dropdown--yellow" value="purple">
+          Purple
+        </option>
+        <option class="menu__dropdown--yellow" value="blue">
+          Blue
+        </option>
+      </select>
     </div>
   </section>
 
