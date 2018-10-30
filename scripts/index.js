@@ -37,12 +37,10 @@ function handleJokeClick(jokes) {
     question.toggleClass("card__question--show");
     punchline.toggleClass("card__punchline--show");
     punchlineShown = !punchlineShown;
-console.log(control.audio)
+
     // Audio controls
     if (punchlineShown && control.audio) {
-      console.log(control.audio)
       var track = Math.ceil(Math.random() * 4);
-      console.log(track);
       track = "../assets/audio/laugh_" + track + ".wav";
       setTimeout(function() {
         new Audio(track).play();
@@ -81,15 +79,38 @@ $(".menu__audio").change(function() {
   control.audio = $("#cb:checked").val();
   if (control.audio == undefined) {
     control.audio = false;
-    display_audio = "Audio Off"
-  } else { 
+    display_audio = "Audio Off";
+  } else {
     control.audio = true;
-    display_audio = "Audio On"}
-    $("#audio__state").text(display_audio);
-  })
-   
-$("select").change( function() {
-  control.color = $(".menu__dropdown").find(":selected").text().trim();
-  $("body").css("background-color", control.color);
-})
- 
+    display_audio = "Audio On";
+  }
+  $("#audio__state").text(display_audio);
+});
+
+$("select").change(function() {
+  var theme = {
+    yellow: {
+      primary: "#fba157",
+      secondary: "#fac562"
+    },
+    purple: {
+      primary: "#5B5BFC",
+      secondary: "#B38CC3"
+    },
+    blue: {
+      primary: "#1FA2FF",
+      secondary: "#A6FFCB"
+    }
+  };
+
+  control.color = $(".menu__dropdown")
+    .find(":selected")
+    .text()
+    .trim()
+    .toLowerCase();
+
+  // Maps CSS varibles to the theme object above
+  var variables = $("html").get(0).style;
+  variables.setProperty("--primary", theme[control.color].primary);
+  variables.setProperty("--secondary", theme[control.color].secondary);
+});

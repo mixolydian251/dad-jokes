@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background: linear-gradient(to top left, #fba157, #fbc562);
+  background: var(--gradient);
   z-index: 100;
   animation: open-menu 500ms ease;
 }
