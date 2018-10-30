@@ -37,9 +37,10 @@ function handleJokeClick(jokes) {
     question.toggleClass("card__question--show");
     punchline.toggleClass("card__punchline--show");
     punchlineShown = !punchlineShown;
-
+console.log(control.audio)
     // Audio controls
     if (punchlineShown && control.audio) {
+      console.log(control.audio)
       var track = Math.ceil(Math.random() * 4);
       console.log(track);
       track = "../assets/audio/laugh_" + track + ".wav";
@@ -75,71 +76,20 @@ function animateMenuIcon() {
   }
 }
 
-// function openMenu(jokes) {
-//   var jokes = jokes.data.jokes;
-//   $("section.joke-container").off("click");
-//   $(".card").css("transform", "scale(1.5)");
-//   $("#joke-id").hide();
-
-//   // Build checkbox
-//   $("#audio")
-//     .text("Audio Off")
-//     .append(
-//       $("<input />", {
-//         type: "checkbox",
-//         class: "cb",
-//         value: "off"
-//       })
-//     );
-//   $(".cb").css({
-//     transform: "scale(2.5)",
-//     "margin-left": "10%",
-//     "margin-bottom": "15%"
-//   });
-
-//   // Build dropdown
-//   var quest = $("#question");
-//   quest.text("Color Theme ");
-//   var dropdown = $("<select>", { id: "color" })
-//     .append($("<option>").text("red"))
-//     .append($("<option>").text("green"))
-//     .append($("<option>").text("pink"));
-//   dropdown.css({
-//     transform: "scale(1.25)"
-//   });
-//   quest.append(dropdown);
-
-//   // Build return
-//   $("#extra").css({
-//     "margin-top": "15%"
-//   });
-
-//   // Read values on return
-//   $("#extra")
-//     .text("Return")
-//     .one("click", function(event) {
-//       //audio
-//       control.audio = $(".cb:checked").val();
-//       if (control.audio == undefined) {
-//         control.audio = "on";
-//       }
-//       // Color
-//       control.color = $("#color")
-//         .find(":selected")
-//         .text();
-//       closeMenu(jokes);
-//     });
-// }
-
-// function closeMenu(jokes) {
-//   $("#extra")
-//     .text("Return")
-//     .off("click");
-//   jokes == undefined ? jokes.data.jokes : jokes;
-//   $("#joke-id").show();
-//   $("#audio").text("");
-//   $("#extra").text("");
-//   $(".card").removeAttr("style");
-//   $("body").css("background-color", control.color);
-//   readJokes();
-// }
+$(".menu__audio").change(function() {
+  var display_audio;
+  control.audio = $("#cb:checked").val();
+  if (control.audio == undefined) {
+    control.audio = false;
+    display_audio = "Audio Off"
+  } else { 
+    control.audio = true;
+    display_audio = "Audio On"}
+    $("#audio__state").text(display_audio);
+  })
+   
+$("select").change( function() {
+  control.color = $(".menu__dropdown").find(":selected").text().trim();
+  $("body").css("background-color", control.color);
+})
+ 
