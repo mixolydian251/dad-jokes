@@ -2,7 +2,7 @@
 var punchlineShown = false;
 var menuOpen = false;
 var control = {
-  audio: true,
+  audio: false,
   color: "yellow"
 };
 
