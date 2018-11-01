@@ -82,8 +82,7 @@ header {
 }
 
 .joke-container {
-  min-height: 650px;
-  height: 100vh;
+  min-height: calc(100vh - 75px);
   display: flex;
   justify-content: center;
 }
@@ -164,6 +163,10 @@ header {
 }
 
 @media only screen and (max-width: 850px) {
+  .joke-container {
+    min-height: 650px;
+  }
+
   .card {
     height: 400px;
     width: 300px;
