@@ -4,7 +4,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
   align-items: center;
   justify-content: space-evenly;
   background: linear-gradient(to top left, #fba157, #fbc562);
@@ -73,6 +72,103 @@
 .line__bottom--open {
   transform: translateY(-7px) rotate(-45deg);
 }
+
+/* MENU ADDITIONS 11.1.18*/
+
+.wrapper1 {
+  width: 100%;
+  height: 25%;
+  position: relative;  
+  display: block;
+}
+
+.audio_card {
+  width: 25%;
+  margin-top: 5%;
+  margin-left: 34%;
+  height: 40%;
+  background: linear-gradient(to top left, orange, red);
+  border-radius: 5px;
+  box-shadow: 0 15px 35px rgba(50, 50, 50, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-size: 180%;
+  text-align: center;
+  padding: 30px;
+  position: absolute;
+}
+
+#card1 {
+  z-index: 5
+}
+
+#card2 {
+  z-index: 10;
+}
+
+.wrapper2 {
+  width: 100%;
+  height: 50%;
+  margin-top: 10%;
+  position: absolute;
+  top: 40%;
+  display: flex;
+}
+
+.color_card {
+  width: 25%;
+  margin-left: 34%;
+  height: 30%;
+  background: linear-gradient(to top left, #86EDC4, #54D19F);
+  border-radius: 5px;
+  box-shadow: 0 15px 35px rgba(50, 50, 50, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-size: 180%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* needed for color */
+  /* padding: 30%; */
+  transition: all 1s;
+}
+
+.color_card:hover {
+  border: 5px solid black;
+  opacity: .95;
+}
+
+#card4 {
+  background: linear-gradient(to top left, #F41111, orange);
+  position: absolute;
+}
+
+#card5 {
+  
+
+  background: linear-gradient(to top left, #86EDC4, #469729);
+  position: absolute;
+  /* transform: translateY(30px) */
+}
+
+#card6 {
+  background: linear-gradient(to top left, #fba157, #fbc562);
+  position: absolute;
+  /* transform: translateY(60px) */
+}
+
+.center {
+  z-index:999;
+  transform:translateX(0px) 
+}
+
+.left {
+  z-index:9;
+  transform:translateX(-100px)  
+}
+
+.right {
+  z-index:9;
+  transform:translateX(100px)
+}
+ 
 
 @keyframes wiggle {
   0%,
