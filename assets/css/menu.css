@@ -7,9 +7,12 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background: var(--gradient);
+  background: var(--card);
+  color: var(--font);
+  opacity: 0.95;
   z-index: 100;
-  animation: open-menu 500ms ease;
+  transition: background 300ms ease;
+  animation: open-menu 300ms ease;
 }
 
 .hidden {
@@ -91,6 +94,6 @@
   }
   to {
     transform: translateX(0);
-    opacity: 1;
+    opacity: 0.9;
   }
 }

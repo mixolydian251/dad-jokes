@@ -53,8 +53,11 @@ function handleMenuClick() {
   var menu = $(".menu");
   $(".menu__button").on("click", function() {
     animateMenuIcon();
-    if (!menuOpen) menu.removeClass("hidden");
-    else menu.addClass("hidden");
+    if (!menuOpen) menu.removeClass("hidden").fadeIn(200);
+    else
+      menu.fadeOut(150, "linear", function() {
+        menu.addClass("hidden");
+      });
     menuOpen = !menuOpen;
   });
 }
@@ -87,19 +90,26 @@ $(".menu__audio").change(function() {
   $("#audio__state").text(display_audio);
 });
 
+// Theme change
 $("select").change(function() {
   var theme = {
     yellow: {
       primary: "#fba157",
-      secondary: "#fac562"
+      secondary: "#fac562",
+      font: "#222222",
+      card: "#FCC55B"
     },
     purple: {
       primary: "#5B5BFC",
-      secondary: "#B38CC3"
+      secondary: "#B38CC3",
+      font: "#FAFAFF",
+      card: "#6A6ABF"
     },
     blue: {
       primary: "#1FA2FF",
-      secondary: "#A6FFCB"
+      secondary: "#A6FFCB",
+      font: "#F2F7FF",
+      card: "#008FA5"
     }
   };
 
@@ -113,4 +123,6 @@ $("select").change(function() {
   var variables = $("html").get(0).style;
   variables.setProperty("--primary", theme[control.color].primary);
   variables.setProperty("--secondary", theme[control.color].secondary);
+  variables.setProperty("--card", theme[control.color].card);
+  variables.setProperty("--font", theme[control.color].font);
 });
