@@ -121,6 +121,7 @@
   text-align: center;
   padding: 3%;
   position: absolute;
+  color: black;
 }
 
 #card1 {
@@ -164,12 +165,14 @@
 #card4 {
   background: linear-gradient(to top left, #5B5BFC, #B38CC3);
   position: absolute;
+  /* color: black; */
 }
 
 /* blue */
 #card5 {
   background: linear-gradient(to top left,#1FA2FF, #A6FFCB);
   position: absolute;
+  color: black;
 }
 
 /* yellow */
